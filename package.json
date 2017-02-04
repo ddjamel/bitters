@@ -24,6 +24,7 @@
   },
   "homepage": "http://bitters.bourbon.io",
   "devDependencies": {
+    "accesslint-cli": "^1.1",
     "bourbon": "^5.0.0-beta.1",
     "gulp": "^3.9",
     "gulp-autoprefixer": "^3.1",

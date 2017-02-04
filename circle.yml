@@ -1,7 +1,21 @@
 general:
+  artifacts:
+    - "tmp"
   branches:
     ignore:
       - gh-pages
+
+machine:
+  node:
+    version: 6.1.0
+
+dependencies:
+  post:
+    - gem install accesslint-ci -v 0.2.6
+
 test:
   override:
     - bundle exec rake
+    - |
+      gulp && \
+      bundle exec accesslint-ci scan http://localhost:8000
