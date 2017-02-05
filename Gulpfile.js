@@ -35,9 +35,9 @@ gulp.task("default", ["sass", "connect"], function() {
 });
 
 gulp.task("accesslint", function() {
-  connect.server({
-    port: 8000
-  });
+  // connect.server({
+  //   port: 8000
+  // });
   exec("echo 'Hello world'");
-  connect.serverClose();
+  // connect.serverClose();
 });
