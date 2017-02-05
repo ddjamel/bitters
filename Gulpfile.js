@@ -1,6 +1,7 @@
-var bourbon    = require("bourbon").includePaths,
-    autoprefix = require("gulp-autoprefixer"),
+var autoprefix = require("gulp-autoprefixer"),
+    bourbon    = require("bourbon").includePaths,
     connect    = require("gulp-connect"),
+    exec       = require("child_process").exec,
     gulp       = require("gulp"),
     sass       = require("gulp-sass");
 
@@ -31,4 +32,12 @@ gulp.task("connect", function() {
 
 gulp.task("default", ["sass", "connect"], function() {
   gulp.watch(paths.scss, ["sass"]);
+});
+
+gulp.task("accesslint", function() {
+  connect.server({
+    port: 8000
+  });
+  exec("bundle exec accesslint-ci scan http://localhost:8000");
+  connect.serverClose();
 });

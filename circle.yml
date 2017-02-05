@@ -16,6 +16,4 @@ dependencies:
 test:
   override:
     - bundle exec rake
-    - |
-      gulp && \
-      bundle exec accesslint-ci scan http://localhost:8000
+    - gulp accesslint
